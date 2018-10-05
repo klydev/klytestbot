@@ -17,6 +17,7 @@ server.listen(process.env.port || process.env.PORT || 3978, function () {
 // Listen for incoming requests at /api/messages.
 server.post('/api/messages', (req, res) => {
     // Use the adapter to process the incoming web request into a TurnContext object.
+    console.log(`\n Received`);
     adapter.processActivity(req, res, async (turnContext) => {
         // Do something with this incoming activity!
         if (turnContext.activity.type === 'message') {            
